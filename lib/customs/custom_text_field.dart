@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:note/customs/app_colors.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField({super.key});
@@ -6,12 +7,17 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      decoration:
-          InputDecoration(border: buildBorder(), enabledBorder: buildBorder()),
+      cursorColor: AppColors.primaryColor,
+      decoration: InputDecoration(
+          hintText: "Title",
+          hintStyle: TextStyle(color: AppColors.primaryColor),
+          border: buildBorder(),
+          enabledBorder: buildBorder(),
+          focusedBorder: buildBorder(AppColors.primaryColor)),
     );
   }
 
-  OutlineInputBorder buildBorder() => OutlineInputBorder(
+  OutlineInputBorder buildBorder([color]) => OutlineInputBorder(
       borderRadius: BorderRadius.circular(10),
-      borderSide: BorderSide(color: Colors.white));
+      borderSide: BorderSide(color: color ?? Colors.white));
 }
