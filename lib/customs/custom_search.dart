@@ -9,8 +9,8 @@ class CustomSearch extends StatelessWidget {
       width: 45,
       height: 45,
       decoration: BoxDecoration(
-          color: const Color.fromARGB(115, 78, 78, 78),
-          borderRadius: BorderRadius.circular(10)),
+          color: Colors.white.withOpacity(0.05),
+          borderRadius: BorderRadius.circular(15)),
       child: Center(
         child: Icon(
           Icons.search,
