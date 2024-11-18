@@ -3,8 +3,8 @@ import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
 import 'package:note/customs/custom_text_styles.dart';
 
 class Note_item extends StatelessWidget {
-  const Note_item({super.key});
-
+  const Note_item({super.key, required this.color});
+  final Color color;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -45,8 +45,8 @@ class Note_item extends StatelessWidget {
           ),
         ],
       ),
-      decoration: BoxDecoration(
-          color: Colors.amber[100], borderRadius: BorderRadius.circular(20)),
+      decoration:
+          BoxDecoration(color: color, borderRadius: BorderRadius.circular(20)),
     );
   }
 }

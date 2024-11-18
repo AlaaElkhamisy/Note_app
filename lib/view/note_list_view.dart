@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:note/customs/app_colors.dart';
 import 'package:note/view/note_item.dart';
 
 class Notes_ListView extends StatelessWidget {
   const Notes_ListView({super.key});
-
+  final int itemCount = 100;
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      itemCount: itemCount,
       itemBuilder: (BuildContext context, int index) {
-        return const Note_item();
+        Color itemColor =
+            AppColors.colorList[index % AppColors.colorList.length];
+        return Note_item(
+          color: itemColor,
+        );
       },
     );
   }
