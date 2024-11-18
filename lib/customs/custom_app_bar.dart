@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:note/customs/custom_search.dart';
 
 class Custom_App_Bar extends StatelessWidget {
   const Custom_App_Bar({super.key});
@@ -10,19 +11,9 @@ class Custom_App_Bar extends StatelessWidget {
       children: [
         const Text(
           "Notes",
-          style: TextStyle(fontSize: 25),
+          style: TextStyle(fontSize: 28),
         ),
-        Container(
-          width: 35,
-          height: 35,
-          decoration: BoxDecoration(
-              color: const Color.fromARGB(115, 78, 78, 78),
-              borderRadius: BorderRadius.circular(10)),
-          child: Icon(
-            Icons.search,
-            size: 30,
-          ),
-        )
+        CustomSearch()
       ],
     );
   }
