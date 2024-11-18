@@ -7,15 +7,19 @@ class Notes_ListView extends StatelessWidget {
   final int itemCount = 100;
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: itemCount,
-      itemBuilder: (BuildContext context, int index) {
-        Color itemColor =
-            AppColors.colorList[index % AppColors.colorList.length];
-        return Note_item(
-          color: itemColor,
-        );
-      },
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 16),
+      child: ListView.builder(
+        padding: EdgeInsets.zero,
+        itemCount: itemCount,
+        itemBuilder: (BuildContext context, int index) {
+          Color itemColor =
+              AppColors.colorList[index % AppColors.colorList.length];
+          return Note_item(
+            color: itemColor,
+          );
+        },
+      ),
     );
   }
 }
