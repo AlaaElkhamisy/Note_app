@@ -16,5 +16,7 @@ class AddNoteSuccess extends AddNoteState {}
 class AddNoteFailure extends AddNoteState {
   final String errMessage;
 
-  const AddNoteFailure(this.errMessage);
+  const AddNoteFailure(
+    this.errMessage,
+  );
 }
