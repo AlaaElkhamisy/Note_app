@@ -26,7 +26,7 @@ class Note_item extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             ListTile(
-              contentPadding: EdgeInsets.only(right: 0),
+              contentPadding: const EdgeInsets.only(right: 0),
               title: Text(
                 note.title,
                 style: CustomTextStyles.Title_Style,
@@ -39,15 +39,18 @@ class Note_item extends StatelessWidget {
                 ),
               ),
               trailing: IconButton(
-                  onPressed: () {},
-                  icon: Icon(
+                  onPressed: () {
+                    // it's very easy to delete note because of HiveObject in the NoteModel which enable you some thing like that
+                    note.delete();
+                  },
+                  icon: const Icon(
                     FontAwesomeIcons.trash,
                     size: 26,
                     color: Colors.black,
                   )),
             ),
             Padding(
-              padding: EdgeInsets.only(right: 10),
+              padding: const EdgeInsets.only(right: 10),
               child: Text(
                 note.date,
                 style: CustomTextStyles.date_Style,
