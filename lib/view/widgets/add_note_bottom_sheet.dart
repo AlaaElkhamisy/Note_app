@@ -25,7 +25,12 @@ class Add_Note_Bottom_Sheet extends StatelessWidget {
             return AbsorbPointer(
                 // to prevent the user to treate the ui untill saving or fetching data from internet
                 absorbing: state is AddNoteLoading ? true : false,
-                child: const SingleChildScrollView(child: AddNoteForm()));
+                child: Padding(
+                  padding: EdgeInsets.only(
+                      // the bottom sheet take bottom padding equal the height of the keyboard
+                      bottom: MediaQuery.of(context).viewInsets.bottom),
+                  child: const SingleChildScrollView(child: AddNoteForm()),
+                ));
           },
         ),
       ),
