@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
+import 'package:note/cubits/notes_cubit/notes_cubit.dart';
 import 'package:note/customs/custom_text_styles.dart';
 import 'package:note/models/note_model.dart';
 import 'package:note/view/edit_note_view.dart';
@@ -42,6 +44,8 @@ class Note_item extends StatelessWidget {
                   onPressed: () {
                     // it's very easy to delete note because of HiveObject in the NoteModel which enable you some thing like that
                     note.delete();
+                    // to refresh or rebuild the notes list after deleting
+                    BlocProvider.of<NotesCubit>(context).fetchAllNotes();
                   },
                   icon: const Icon(
                     FontAwesomeIcons.trash,
